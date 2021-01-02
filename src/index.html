@@ -11,43 +11,74 @@
     <h1>Dados de COVID 19 no Brasil.</h1>
   </header>    
   <div class="container">
-    <article class="write-region">
+    <article class="select">
       <label for="region">Digite um estado:</label>
       <section>
-        <input type="text" name="region" id="region" placeholder="ex: Ceará, Rio Grande do Norte">
+        <!-- <input type="text" name="region" id="region" placeholder="ex: Ceará, Rio Grande do Norte"> -->
+        <select name="region" id="region">
+          <option value="Ceará">Ceará</option>
+          <option value="Ceará">São Paulo</option>
+          <option value="Ceará">Piauí</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+          <option value="Ceará">Rio Grande do Norte</option>
+
+        </select>
         <button type="button">Pesquisar</button>
       </section>
     </article>
+
+    <aside class="container-slider">
+
+      <div class="container-images">
+        <img
+          src="https://cdn.icon-icons.com/icons2/2321/PNG/128/hand_wash_hygiene_soap_cleaning_coronavirus_icon_142099.png"
+          alt="Lave as mão com água."
+          class="image">
+      </div>
+      
+      <div class="container-descriptions">
+        <p class="description">Lave as mão com água.</p>
+      </div>
+
+    </aside>
 
     <section class="response">
       <div>
         <h3>Resultados do <span class="state">estado</span> <span id="state"></span></h3>
       </div>
-      <table>
-        <tbody>
-          <tr>
-            <th class="cases">Casos: </th>
-            <td id="cases"></td>
-          </tr>
-          <tr>
-            <th class="suspects">Suspeitos: </th>
-            <td id="suspects"></td>
-          </tr>
-          <tr>
-            <th class="deaths">Mortes: </th>
-            <td id="deaths"></td>
-          </tr>
-          <tr>
-            <th class="refuses">Descartados: </th>
-            <td id="refuses"></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="response-tag-p">
+
+        <p class="cases">Casos: <span class="span"></span> </p>
+        <p class="suspects">Suspeitos: <span class="span"></span></p>
+        <p class="deaths">Mortes: <span class="span"></span></p>
+        <p class="refuses">Descartados: <span class="span"></span></p>
+      </div>
     </section>
   </div>
   <footer>
     <p>Desafio proposto por Omega Sistemas.</p>
   </footer>
   <script src="./public/scripts.js"></script>
+  <script src="./public/scripts-slider.js"></script>
 </body>
 </html>

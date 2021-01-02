@@ -1,4 +1,5 @@
 const region = document.querySelector('#region')
+
 const options = {
   method: 'GET',
   module: 'cors',
