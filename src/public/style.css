@@ -95,6 +95,9 @@ header{
   margin: 34px 0;
   font-size: 24px;
 }
+.response .response-tag-p span{
+  margin: auto 16px;
+}
 footer{
   font-size: 18px;
   font-weight: bold;
@@ -159,9 +162,11 @@ footer{
   }
   .container section.response{
     grid-area: result;
+    display: flex;
+    justify-content: space-evenly;
     height: 410px;
     width: 90%;
-    padding: 16px;
+    padding: 8px 32px;
   }
 }
 @media screen and (min-width: 1024px){
@@ -200,5 +205,10 @@ footer{
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
+  }
+  .container section.response{
+    grid-area: result;
+    height: 410px;
+    width: 90%;
   }
 }
