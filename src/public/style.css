@@ -41,22 +41,67 @@ header{
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
   margin: 20px auto;
   height: 150px;
   width: 100%;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 1px 1px 3px #666;
-}
-.container .select label{
-  font-size: 24px;
+  box-sizing: border-box;
+  padding: 4px 0px 105px;
 }
 .container .select #region{
-  width: 50%;
+  box-sizing: border-box;
+  padding: 0px 8px;
+  width: 60%;
   height: 40px;
   font-size: 18px;
   font-weight: 700;
+  border-radius: 4px;
+}
+::-webkit-input-placeholder{
+  color: #666;
+}
+input::-moz-placeholder{
+  color: #666;
+}
+.drop-down{
+  display: none;
+  width: 70%;
+  max-width: 230px;
+  height: 90px;
+  background-color: rgba(102, 102, 102, 0.192);
+  border-radius: 4px;
+  align-self: auto;
+  text-align: left;
+  margin-top: 12px;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0px 2px;
+  transform: translate(0px, -10px);
+}
+.drop-down .items{
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  transition: 300ms;
+}
+.items:hover{
+  background-color: rgba(201, 197, 197, 0.884);
+  padding-left: 5px;
+  transition: 300ms;
+}
+::-webkit-scrollbar{
+  background-color: rgba(102, 102, 102, 0.137);
+  width: 10px;
+  border-radius: 0px 4px 4px 0px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #666;
   border-radius: 4px;
 }
 .container .select button{
@@ -105,6 +150,18 @@ footer{
 }
 
 @media screen and (min-width: 768px){
+  header{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px #666;
+    color: white;
+    background-color: var(--color-primary);
+  }
   .container{
     display: grid;
     gap: 16px;
@@ -131,6 +188,9 @@ footer{
     height: 40px;
     width: 100px;
     font-size: 18px;
+  }
+  .drop-down{
+    margin-right: 54px;
   }
   .container-slider{
     display: flex;

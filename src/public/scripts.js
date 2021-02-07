@@ -42,37 +42,43 @@ document.querySelector('button')
 
 const images = [
   {
-    imageUrl: '2321/PNG/128/hand_wash_hygiene_soap_cleaning_coronavirus_icon_142099',
-    title: 'Lave as mão com água.'
+    imageUrl: './img/lave-as-maos.png',
+    title: 'Lave as mão com água e sabonete.'
   },
   {
-    imageUrl: '2228/PNG/512/soap_gel_cleaning_sterile_coronavirus_infection_health_icon_134539',
-    title: 'Utilize sabão.'
+    imageUrl: './img/use-alcool-em-gel.png',
+    title: 'Na auxencia de água e sabão, use alcool em gel.'
   },
   {
-    imageUrl: '2298/PNG/512/wash_hands_cleaning_soap_coronavirus_covid_medical_icon_141608',
-    title: 'Esfregue bem todas as partes das mão'
-  },
-  {
-    imageUrl: '2299/PNG/128/wash_hands_cleaning_water_coronavirus_covid_soap_icon_141632',
-    title: 'Na auxência de água e sabão use álcool em gel.'
-  },
-  {
-    imageUrl: '2228/PNG/512/mask_wearing_avatar_man_covid_coronavirus_air_pollution_icon_134542',
+    imageUrl: './img/use-mascara.png',
     title: 'Use máscara ao sair de casa.'
+  },
+  {
+    imageUrl: './img/mantenha-distanciamento.png',
+    title: 'Mantenha distanciamento de outras pessoas.'
+  },
+  {
+    imageUrl: './img/pratique-exercicios.png',
+    title: 'Pratique exercícios.'
+  },
+  {
+    imageUrl: './img/alimente-se-bem.png',
+    title: 'Coma alimentos saudáveis.'
+  },
+  {
+    imageUrl: './img/igienize-os-objetos.png',
+    title: 'Igienize com alcool seus objetos.'
   }
 ]
-const baseUrl = 'https://cdn.icon-icons.com/icons2/'
 
-let time = 4000,
+let time = 5000,
   index = 0,
   max = images.length,
   tagImage = document.querySelector('.image'),
   tagPImage = document.querySelector('.description'),
-  tagSelect = document.querySelector('.select select')
-console.log(tagSelect.value);
+  tagInputSelect = document.querySelector('.select .list-drop-down')
 const nextImage = () => {
-  tagImage.setAttribute('src', `${baseUrl}${images[index].imageUrl}.png`)
+  tagImage.setAttribute('src', `${images[index].imageUrl}`)
   tagImage.setAttribute('alt', `${images[index].title}`)
   tagPImage.innerHTML = `${images[index].title}`
   index++
@@ -87,12 +93,32 @@ async function createOptionsStates() {
   const stateList = await myResponse.json()
   const arrayOfStates = Array.from(stateList)
   const maxOptions = arrayOfStates.length
-  return arrayOfStates.map(option => {
-    let tagOption = document.createElement('option')
-    tagOption.setAttribute('value', option.nome)
-    tagOption.innerHTML = option.nome
-    tagSelect.appendChild(tagOption)
+  return arrayOfStates.map((option, index) => {
+    let tagDivOption = document.createElement('div')
+
+    tagDivOption.setAttribute('class', 'items')
+    tagDivOption.setAttribute('id', `item-${index}`)
+    tagDivOption.setAttribute('onmousedown', `category(${index})`)
+    tagDivOption.innerHTML = option.nome
+    tagInputSelect.appendChild(tagDivOption)
   })
+}
+function category (value) {
+  let item = document.querySelector(`#item-${value}`)
+  region.value = item.innerHTML   
+}
+const displays = ['block', 'none']
+const paddings = ['4px 0px', '4px 0px 105px']
+const translate = ['0px', '0px, -10px']
+let dropDown = document.querySelector('.drop-down'),
+  containerSeletc = document.querySelector('.container .select')
+function dropdown(params){
+
+  dropDown.style.display = displays[params]
+  containerSeletc.style.padding = paddings[params]
+  setTimeout(() => {
+    dropDown.style.transform = `translate(${translate[params]})`
+  }, 0)
 }
 const start = () => {
   createOptionsStates()

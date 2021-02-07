@@ -12,25 +12,27 @@
   </header>    
   <div class="container">
     <article class="select">
-      <label for="region">Digite um estado:</label>
-      <section>
-        <select name="region" id="region">
-        </select>
+      <div>
+        <input type="text" id="region" name="category" placeholder="Selecione uma opção" 
+          onfocus="dropdown(0)" onblur="dropdown(1)">
         <button type="button">Pesquisar</button>
-      </section>
+      </div>
+      <div class="drop-down">
+        <div class="list-drop-down"></div>
+      </div>
     </article>
 
     <aside class="container-slider">
 
       <div class="container-images">
         <img
-          src="https://cdn.icon-icons.com/icons2/2321/PNG/128/hand_wash_hygiene_soap_cleaning_coronavirus_icon_142099.png"
-          alt="Lave as mão com água."
+          src="./img/igienize-os-objetos.png"
+          alt="Igienize com alcool seus objetos."
           class="image">
       </div>
       
       <div class="container-descriptions">
-        <p class="description">Lave as mão com água.</p>
+        <p class="description">Igienize com alcool seus objetos.</p>
       </div>
 
     </aside>
